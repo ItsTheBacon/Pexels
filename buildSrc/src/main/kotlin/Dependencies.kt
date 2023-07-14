@@ -19,6 +19,8 @@ object Versions {
     const val okHttp = "5.0.0-alpha.11"
     const val room = "2.5.2"
     const val paging = "3.1.1"
+    const val glide = "4.15.1"
+    const val swipeRefresh = "1.2.0-alpha01"
 }
 
 object Libraries {
@@ -42,6 +44,14 @@ object Libraries {
         const val vbpd = "com.github.kirich1409:viewbindingpropertydelegate-noreflection:${
             Versions.vbpd
         }"
+        const val glide = "com.github.bumptech.glide:glide:${
+            Versions.glide
+        }"
+        const val swipeRefresh =
+            "androidx.swiperefreshlayout:swiperefreshlayout:${
+                Versions.swipeRefresh
+            }"
+
     }
 
     object Core {
