@@ -15,4 +15,10 @@
 
         <!-- Customize your theme here. -->
     </style>
+    <style name="Theme.Pexels.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_pexels_foreground</item>
+        <item name="postSplashScreenTheme">@style/Theme.Pexels</item>
+    </style>
+
 </resources>

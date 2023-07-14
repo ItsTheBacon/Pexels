@@ -3,6 +3,7 @@ package com.bacon.pexels.presentation.ui.activity
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.isVisible
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     private val binding by viewBinding(ActivityMainBinding::bind)
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         super.onCreate(savedInstanceState)
         setupNavigation()
         updateUIComponents()
