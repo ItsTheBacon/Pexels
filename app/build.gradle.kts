@@ -53,6 +53,9 @@ android {
 
 dependencies {
 
+    implementation(project(":data"))
+    implementation(project(":domain"))
+
     // Kotlin
     implementation(Libraries.Coroutines.android)
 
@@ -60,6 +63,8 @@ dependencies {
     implementation(Libraries.UIComponents.material)
     implementation(Libraries.UIComponents.constraintLayout)
     implementation(Libraries.UIComponents.vbpd)
+    implementation(Libraries.UIComponents.glide)
+    implementation(Libraries.UIComponents.swipeRefresh)
 
     // Core
     implementation(Libraries.Core.core)
