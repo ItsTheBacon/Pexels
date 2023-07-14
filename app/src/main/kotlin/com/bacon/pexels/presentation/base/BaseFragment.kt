@@ -17,7 +17,9 @@ import com.bacon.pexels.presentation.ui.state.UIState
 import com.google.android.material.progressindicator.CircularProgressIndicator
 import com.google.android.material.textfield.TextInputLayout
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 /**
@@ -123,9 +125,11 @@ abstract class BaseFragment<ViewModel : BaseViewModel, Binding : ViewBinding>(
         is NetworkError.Unexpected -> {
             showToastLong(this.error)
         }
+
         is NetworkError.Api -> {
             this.error?.let { showToastLong(it) }
         }
+
         is NetworkError.ApiInputs -> {
             for (input in inputs) {
                 error?.get(input.tag).also { error ->
@@ -138,6 +142,7 @@ abstract class BaseFragment<ViewModel : BaseViewModel, Binding : ViewBinding>(
                 }
             }
         }
+
         is NetworkError.Timeout -> {
             showToastLong("Timeout")
         }
