@@ -26,8 +26,8 @@ class PhotoViewingFragment : BaseFragment<PhotoViewingViewModel, FragmentPhotoVi
     override fun setupSubscribers() = with(binding) {
         viewModel.fetchPhotoByIdState.collectUIState(
             onSuccess = {
-                imageViewingPhoto.loadUrl(it.src.original, onLoad = {
-                    loaderPhotoViewing.isVisible = it
+                imageViewingPhoto.loadUrl(it.src.original, onLoad = { isVisible ->
+                    loaderPhotoViewing.isVisible = isVisible
                 })
             },
             onError = {
