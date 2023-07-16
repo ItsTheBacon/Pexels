@@ -69,6 +69,7 @@ class GalleryFragment : BaseFragment<GalleryViewModel, FragmentGalleryBinding>(
 
     private fun setupSwipeRefresh() = with(binding.curatedSwipe) {
         setColorSchemeResources(R.color.black)
+
         setOnRefreshListener {
             curatedPagingAdapter.refresh()
         }
