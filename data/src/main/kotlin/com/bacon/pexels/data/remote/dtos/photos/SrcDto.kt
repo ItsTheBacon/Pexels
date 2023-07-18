@@ -1,6 +1,6 @@
-package com.bacon.pexels.data.remote.dtos
+package com.bacon.pexels.data.remote.dtos.photos
 
-import com.bacon.domain.models.SrcModel
+import com.bacon.domain.models.photos.SrcModel
 import com.bacon.pexels.data.utils.DataMapper
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

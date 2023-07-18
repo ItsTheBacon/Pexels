@@ -1,4 +1,4 @@
-package com.bacon.domain.models
+package com.bacon.domain.models.photos
 
 data class SrcModel(
     val original: String,

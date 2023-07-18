@@ -1,4 +1,4 @@
-package com.bacon.pexels.data.remote.dtos
+package com.bacon.pexels.data.remote.dtos.photos
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

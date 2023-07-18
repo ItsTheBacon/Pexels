@@ -2,7 +2,7 @@ package com.bacon.pexels.data.base
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.bacon.pexels.data.remote.dtos.PexelsResponseDto
+import com.bacon.pexels.data.remote.dtos.photos.PexelsResponseDto
 import com.bacon.pexels.data.utils.DataMapper
 import retrofit2.HttpException
 import retrofit2.Response
