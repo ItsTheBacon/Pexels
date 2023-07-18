@@ -1,7 +1,8 @@
 package com.bacon.pexels.data.remote.apiservices
 
-import com.bacon.pexels.data.remote.dtos.PexelPhotoDto
-import com.bacon.pexels.data.remote.dtos.PexelsResponseDto
+import com.bacon.pexels.data.remote.dtos.photos.PexelPhotoDto
+import com.bacon.pexels.data.remote.dtos.photos.PexelsResponseDto
+import com.bacon.pexels.data.remote.dtos.videos.VideosResponseDto
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -19,4 +20,9 @@ interface PexelsApiService {
     suspend fun fetchPhotoById(
         @Path("id") id: Int
     ): Response<PexelPhotoDto>
+
+    @GET("videos/popular")
+    suspend fun fetchPopularVideos(
+        @Query("per_page") perPage: Int,
+    ): Response<VideosResponseDto>
 }

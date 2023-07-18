@@ -15,4 +15,9 @@ class PexelsRepositoryImpl @Inject constructor(
     override fun fetchPhotoById(id: Int) = doNetworkRequestWithMapping {
         service.fetchPhotoById(id)
     }
+
+    override fun fetchPopularVideos() = doNetworkRequestWithMapping {
+        service.fetchPopularVideos(20)
+    }
+
 }
