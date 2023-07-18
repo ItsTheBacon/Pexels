@@ -1,6 +1,6 @@
 package com.bacon.pexels.presentation.models
 
-import com.bacon.domain.models.PexelPhotoModel
+import com.bacon.domain.models.photos.PexelPhotoModel
 import com.bacon.pexels.presentation.base.IBaseDiffModel
 
 data class PexelPhotoModelUI(
