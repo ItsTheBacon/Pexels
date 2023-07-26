@@ -2,7 +2,7 @@ plugins {
     id(Plugins.AGP.application)
     kotlin(Plugins.Kotlin.android)
     kotlin(Plugins.Kotlin.kapt)
-
+    id(Plugins.Kotlin.parcelize)
     // Navigation Safe Args
     id(Plugins.Navigation.safeArgs)
 
@@ -65,6 +65,11 @@ dependencies {
     implementation(Libraries.UIComponents.vbpd)
     implementation(Libraries.UIComponents.glide)
     implementation(Libraries.UIComponents.swipeRefresh)
+
+    //ExoPlayer
+    implementation(Libraries.ExoPlayer.exoPlayerUI)
+    implementation(Libraries.ExoPlayer.exoPlayerDash)
+    implementation(Libraries.ExoPlayer.exoPlayerCore)
 
     // Core
     implementation(Libraries.Core.core)

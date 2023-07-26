@@ -141,6 +141,7 @@ object Plugins {
         const val android = "android"
         const val jvm = "jvm"
         const val kapt = "kapt"
+        const val parcelize = "kotlin-parcelize"
     }
 
     object KSP {
