@@ -54,6 +54,18 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
                     toolbarMainActivity.isVisible = true
                     bottomNavigation.isVisible = true
                 }
+
+                R.id.videoDetailFragment -> {
+                    toolbarMainActivity.isVisible = false
+                    bottomNavigation.isVisible = false
+                    setValueOfFlagNoLimits(true)
+                }
+
+                R.id.videosFragment -> {
+                    setValueOfFlagNoLimits(false)
+                    toolbarMainActivity.isVisible = true
+                    bottomNavigation.isVisible = true
+                }
             }
         }
     }
@@ -65,5 +77,4 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             window.clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
     }
-
 }
