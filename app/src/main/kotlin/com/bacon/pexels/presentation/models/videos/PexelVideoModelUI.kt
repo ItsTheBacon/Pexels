@@ -1,8 +1,12 @@
 package com.bacon.pexels.presentation.models.videos
 
+import android.os.Parcelable
 import com.bacon.domain.models.videos.PexelVideoModel
 import com.bacon.pexels.presentation.base.IBaseDiffModel
+import kotlinx.parcelize.Parcelize
 
+
+@Parcelize
 data class PexelVideoModelUI(
     val duration: Int = 0,
     val image: String = "",
@@ -13,7 +17,7 @@ data class PexelVideoModelUI(
     val user: UserModelUI,
     val url: String = "",
     val height: Int? = 0
-) : IBaseDiffModel<Int>
+) : IBaseDiffModel<Int>, Parcelable
 
 fun PexelVideoModel.toUI() = PexelVideoModelUI(
     duration,
