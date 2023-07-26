@@ -26,5 +26,19 @@
         android:id="@+id/videosFragment"
         android:name="com.bacon.pexels.presentation.ui.fragments.videos.VideosFragment"
         android:label="Videos"
-        tools:layout="@layout/fragment_videos" />
+        tools:layout="@layout/fragment_videos" >
+        <action
+            android:id="@+id/action_videosFragment_to_videoDetailFragment"
+            app:destination="@id/videoDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoDetailFragment"
+        android:name="com.bacon.pexels.presentation.ui.fragments.videos.detail.VideoDetailFragment"
+        android:label="Player"
+        tools:layout="@layout/fragment_video_detail" >
+
+        <argument
+            android:name="videoInfo"
+            app:argType="com.bacon.pexels.presentation.models.videos.PexelVideoModelUI" />
+    </fragment>
 </navigation>
