@@ -21,6 +21,7 @@ object Versions {
     const val paging = "3.1.1"
     const val glide = "4.15.1"
     const val swipeRefresh = "1.2.0-alpha01"
+    const val exoPlayer = "2.15.0"
 }
 
 object Libraries {
@@ -51,6 +52,21 @@ object Libraries {
             "androidx.swiperefreshlayout:swiperefreshlayout:${
                 Versions.swipeRefresh
             }"
+
+    }
+
+    object ExoPlayer {
+        const val exoPlayerCore =
+            "com.google.android.exoplayer:exoplayer-core:${
+                Versions.exoPlayer
+            }"
+        const val exoPlayerDash =
+            "com.google.android.exoplayer:exoplayer-dash:${
+                Versions.exoPlayer
+            }"
+        const val exoPlayerUI = "com.google.android.exoplayer:exoplayer-ui:${
+            Versions.exoPlayer
+        }"
 
     }
 
