@@ -1,13 +1,18 @@
 package com.bacon.pexels.presentation.ui.fragments.videos
 
+import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.bacon.pexels.R
 import com.bacon.pexels.databinding.FragmentVideosBinding
 import com.bacon.pexels.presentation.base.BaseFragment
+import com.bacon.pexels.presentation.extensions.navigateSafely
+import com.bacon.pexels.presentation.models.videos.PexelVideoModelUI
 import com.bacon.pexels.presentation.ui.adapters.VideosAdapter
+import com.bacon.pexels.presentation.ui.state.UIState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -16,7 +21,7 @@ class VideosFragment : BaseFragment<VideosViewModel, FragmentVideosBinding>(
 ) {
     override val viewModel by viewModels<VideosViewModel>()
     override val binding by viewBinding(FragmentVideosBinding::bind)
-    private val videosAdapter = VideosAdapter()
+    private val videosAdapter = VideosAdapter(this::setonVideoItemClickListener)
 
 
     override fun initialize() {
@@ -35,7 +40,16 @@ class VideosFragment : BaseFragment<VideosViewModel, FragmentVideosBinding>(
             onError = {},
             onSuccess = {
                 videosAdapter.submitList(it.videos)
+            },
+            state = {
+                binding.loaderVideos.isVisible = it is UIState.Loading
             }
+        )
+    }
+
+    private fun setonVideoItemClickListener(item: PexelVideoModelUI) {
+        findNavController().navigateSafely(
+            VideosFragmentDirections.actionVideosFragmentToVideoDetailFragment(item)
         )
     }
 }
