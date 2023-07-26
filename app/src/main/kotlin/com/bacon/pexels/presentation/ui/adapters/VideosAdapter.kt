@@ -13,12 +13,22 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
 
-class VideosAdapter :
-    ListAdapter<PexelVideoModelUI, VideosAdapter.ViewHolder>(BaseDiffUtilItemCallback()) {
+class VideosAdapter(
+    private val onItemClickListener: (item: PexelVideoModelUI) -> Unit
+) : ListAdapter<PexelVideoModelUI, VideosAdapter.ViewHolder>(BaseDiffUtilItemCallback()) {
 
     inner class ViewHolder(
         private val binding: ItemVideosBinding
     ) : RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.setOnClickListener {
+                getItem(absoluteAdapterPosition)?.let {
+                    onItemClickListener(it)
+                }
+            }
+        }
+
         fun onBind(item: PexelVideoModelUI) {
             Glide.with(itemView.context)
                 .asBitmap()
